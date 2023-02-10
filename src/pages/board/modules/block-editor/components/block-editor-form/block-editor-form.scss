@@ -1,0 +1,31 @@
+@import "src/global";
+
+.block-editor-form {
+  &__clear-input-button {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__additional-caption {
+    margin-left: 20px;
+  }
+
+  &__item {
+    display: flex;
+    margin-left: 30px;
+  }
+
+  &__cloud {
+    border-radius: 50%;
+    border: 2px solid #e1e1e1;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    transform-origin: center center;
+    padding: 2px;
+    overflow: hidden;
+    z-index: 1;
+
+    @include icon-mixin;
+  }
+}

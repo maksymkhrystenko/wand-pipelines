@@ -1,0 +1,65 @@
+@import "src/global";
+
+.react-flow__node-turbo {
+  border-radius: var(--node-border-radius);
+  display: flex;
+  height: 150px;
+  min-width: 200px;
+  font-family: "Fira Mono", monospace;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  box-shadow: var(--node-box-shadow);
+
+  .block-node {
+    overflow: hidden;
+    display: flex;
+    padding: 2px;
+    position: relative;
+    border-radius: var(--node-border-radius);
+    flex-grow: 1;
+
+    @include process-block;
+
+    &--with-gradient::before {
+      content: "";
+      position: absolute;
+      padding-bottom: calc(100% * 1.4142);
+      width: calc(100% * 1.4142);
+      background: conic-gradient(
+        from -160deg at 50% 50%,
+        #d0e92a 0deg,
+        #a853ba 120deg,
+        #2a8af6 240deg,
+        #e92a67 360deg
+      );
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+    }
+  }
+
+  &.selected {
+    .block-node {
+      &--with-gradient::before {
+        content: "";
+        background: conic-gradient(
+          from -160deg at 50% 50%,
+          #d0e92a 0deg,
+          #a853ba 120deg,
+          #2a8af6 240deg,
+          rgb(42 138 246 / 0%) 360deg
+        );
+        animation: spinner 4s linear infinite;
+        transform: translate(-50%, -50%) rotate(0deg);
+        z-index: -1;
+      }
+    }
+  }
+}
+
+@keyframes spinner {
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}

@@ -1,0 +1,17 @@
+.tools-pane {
+  &.ant-layout-sider {
+    text-align: center;
+    line-height: 120px;
+    color: #fff;
+    background-color: #fff;
+    border-right: 1px solid #f9f9f9;
+
+    .ant-collapse-content-box {
+      padding: 0;
+    }
+
+    .ant-collapse {
+      border-radius: 0;
+    }
+  }
+}

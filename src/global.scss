@@ -1,0 +1,75 @@
+body {
+  display: flex;
+
+  #root {
+    width: 100%;
+    display: flex;
+  }
+}
+
+@mixin icon-mixin {
+  &--with-nest-icon {
+    background: url("../public/block-node-icons/nest-icon.png") center / 70%
+      no-repeat;
+  }
+
+  &--with-home-icon {
+    background: url("../public/block-node-icons/home-icon.png") center / 70%
+      no-repeat;
+  }
+
+  &--with-filter-icon {
+    background: url("../public/block-node-icons/filter-icon.png") center / 70%
+      no-repeat;
+  }
+}
+
+@mixin process-block {
+  &__inner {
+    cursor: grab;
+    background: #ccc;
+    border-radius: var(--node-border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative;
+  }
+
+  &__body {
+    display: flex;
+    color: #000;
+    height: 100%;
+    background: #fff;
+    padding: 16px 20px 16px 0;
+    width: auto;
+    border-radius: 0 10px 10px 0;
+    margin-left: 50px;
+  }
+
+  &__title {
+    font-size: 16px;
+    margin-bottom: 2px;
+    line-height: 1;
+    padding-left: 6px;
+    text-overflow: ellipsis;
+  }
+
+  &__cloud {
+    border-radius: 50%;
+    border: 2px solid #e1e1e1;
+    width: 30px;
+    height: 30px;
+    left: -4px;
+    position: absolute;
+    top: 22px;
+    transform: translate(50%, -50%);
+    display: flex;
+    transform-origin: center center;
+    padding: 2px;
+    overflow: hidden;
+    z-index: 1;
+
+    @include icon-mixin;
+  }
+}

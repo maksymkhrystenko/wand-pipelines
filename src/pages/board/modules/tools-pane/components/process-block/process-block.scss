@@ -1,0 +1,10 @@
+@import "src/global";
+
+.process-block {
+  @include process-block;
+
+  &__body {
+    border-radius: 0;
+    border: 1px solid #f6f6f6;
+  }
+}
